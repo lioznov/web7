@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Андрей Лиознов">
+    <meta name="description" content="Тестовая страница">
+    <meta name="keywords" content="КубГУ">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Главная страница</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">HTML&CSS</a>
+        <a onclick="window.location = 'index.html'">A_Lioz</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="two.html">О нас</a></li>
+                <li class="nav-item"><a class="nav-link" href="two.html">Портфолио</a></li>
+                <li class="nav-item"><a class="nav-link" href="two.html">Цены</a></li>
+                <li class="nav-item"><a class="nav-link" href="two.html">Контакты</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="gallery-wrapper">
+    <button class="arrow left-arrow" onclick="prevSlide()">❮</button>
+    <div class="gallery-container">
+      <div class="gallery-slider">
+        <div class="slide"><img src="https://avatars.mds.yandex.net/i?id=e61ed2c2a0c99206bc61bd80c29105af504c821c-4824599-images-thumbs&n=13" alt="1" width="300" height="200"></div>
+        <div class="slide"><img src="https://avatars.mds.yandex.net/i?id=57c6b29af1653b5946018118ec3abbf726ff3f07-8497474-images-thumbs&n=13" alt="2" width="300" height="200"></div>
+        <div class="slide"><img src="https://avatars.mds.yandex.net/i?id=0cc719cb898c0f3bb43d9b51696f1f0ec36fda0f-10698550-images-thumbs&n=13" alt="3" width="300" height="200"></div>
+        <div class="slide"><img src="https://avatars.mds.yandex.net/i?id=858132f179580285e56c24ee0dfe3c4284abfad5-3550108-images-thumbs&n=13" alt="4" width="300" height="200"></div>
+        <div class="slide"><img src="https://avatars.mds.yandex.net/i?id=c735e2804d5eb3098faa42c19e47b37f75606acc-12935593-images-thumbs&n=13" alt="5" width="300" height="200"></div>
+        <div class="slide"><img src="https://avatars.mds.yandex.net/i?id=38334a64f725a8f1767548aed80d778668e85232-10868638-images-thumbs&n=13" alt="6" width="300" height="200"></div>
+        <div class="slide"><img src="https://avatars.mds.yandex.net/i?id=b3de4080a01b775f18041fd00c5ac781-5234377-images-thumbs&n=13" alt="7" width="300" height="200"></div>
+        <div class="slide"><img src="https://avatars.mds.yandex.net/i?id=b8623a813ab82f6ee7c31b52b2a7362ae0edfc3e-8498221-images-thumbs&n=13" alt="8" width="300" height="200"></div>
+      </div>
+    </div>
+    <button class="arrow right-arrow" onclick="nextSlide()">❯</button>
+    <div class="pager">
+      <span id="currentPage">1</span> / <span id="totalPages">3</span>
+    </div>
+  </div>
+  <script src="script.js"></script>
+
+  <script>
+const slider = document.querySelector('.gallery-slider');
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+const slidesPerPage = window.innerWidth <= 768 ? 1 : 3;
+const totalPages = Math.ceil(totalSlides / slidesPerPage);
+let currentPage = 1;
+
+document.getElementById('totalPages').textContent = totalPages;
+
+function updateSliderPosition() {
+  const slideWidth = slider.offsetWidth / slidesPerPage;
+  slider.style.transform = `translateX(-${(currentPage - 1) * slideWidth * slidesPerPage}px)`;
+  document.getElementById('currentPage').textContent = currentPage;
+}
+
+function nextSlide() {
+  if (currentPage < totalPages) {
+    currentPage++;
+  } else {
+    currentPage = 1;
+  }
+  updateSliderPosition();
+}
+
+function prevSlide() {
+  if (currentPage > 1) {
+    currentPage--;
+  } else {
+    currentPage = totalPages;
+  }
+  updateSliderPosition();
+}
+
+window.addEventListener('resize', () => {
+  updateSliderPosition();
+});
+
+updateSliderPosition();
+
+
+
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container mt-4">
+	<div class="tabfor">
+	<div class="tab">
+    <div class="row">
+        <div class="col-12">
+            <h1>Таблица</h1>
+            <table class="table table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Название 1</th>
+                        <th>Название 2</th>
+                        <th>Название 3</th>
+                        <th>Название 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ячейка 1,1</td>
+                        <td>Ячейка 1,2</td>
+                        <td>Ячейка 1,3</td>
+                        <td>Ячейка 1,4</td>
+                    </tr>
+                    <tr>
+                        <td>Ячейка 2,1</td>
+                        <td>Ячейка 2,2</td>
+                        <td>Ячейка 2,3</td>
+                        <td>Ячейка 2,4</td>
+                    </tr>
+                    <!-- Остальные строки таблицы -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="forma">
+    <div class="row">
+        <div class="col-12">
+            <h1 id="fragment">Форма</h1>
+            <form method="POST">
+                <div class="mb-3">
+                    <label for="field-full-name" class="form-label">ФИО:</label>
+                    <input type="text" class="form-control" id="field-full-name" name="field-full-name">
+                </div>
+
+                <div class="mb-3">
+                    <label for="field-phone" class="form-label">Номер телефона:</label>
+                    <input type="tel" class="form-control" id="field-phone" name="field-phone">
+                </div>
+
+                <div class="mb-3">
+                    <label for="field-email" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="field-email" name="field-email">
+                </div>
+
+                <div class="mb-3">
+                    <label for="field-date" class="form-label">Дата рождения:</label>
+                    <input type="date" class="form-control" id="field-date" name="field-date">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Пол:</label><br>
+                    <input type="radio" name="field-gender" value="Мужской"> Мужской<br>
+                    <input type="radio" name="field-gender" value="Женский"> Женский
+                </div>
+
+                <div class="mb-3">
+                    <label for="field-programming-leng" class="form-label">Любимый язык программирования:</label>
+                    <select class="form-select" name="field-programming-leng" multiple size="10">
+                        <option value="Pascal">Pascal</option>
+                        <option value="C">C</option>
+                        <option value="C++">C++</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="PHP">PHP</option>
+                        <option value="Python">Python</option>
+                        <option value="Java">Java</option>
+                        <option value="Haskel">Haskel</option>
+                        <option value="Clojure">Clojure</option>
+                        <option value="Prolog">Prolog</option>
+                        <option value="Scala">Scala</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="field-bio" class="form-label">Биография:</label>
+                    <textarea class="form-control" id="field-bio" name="field-bio"></textarea>
+                </div>
+
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="check" name="check">
+                    <label class="form-check-label" for="check">С контрактом ознакомлен(a)</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Сохранить</button>
+            </form>
+        </div>
+    </div>
+</div></div>
+    <div class="row mt-4">
+        <div class="col-12">
+            <ul class="list-unstyled">
+                <li><a href="http://kubsu.ru/">КубГУ http</a></li>
+    <li><a href="https://www.kubsu.ru/"title="Официальный сайт Кубанского государственного университета">КубГУ https</a></li><br>  <!-- коментарий -->
+     <a href="http://kubsu.ru/"><img src="https://www.meme-arsenal.com/memes/43618a00a59063ea788fa3c985d831dd.jpg" id="foto" alt="Описание изображения" width="300" height="200"></a></li>
+    <li> <a href="two.html" target="_blank"> Сокращенная ссылку на внутреннюю страницу страницу</a></li>
+    <li> <a href="index.html" target="_blank"> Сокращенная ссылку на главную страницу</a></li>
+    <nav>
+        <li><a href="#foto">Ссылка на фрагмент текущей страницы</a></li>
+    </nav>
+    <li><a href="index.html?a=name&b=tel&c=number">Ссылка с тремя параметрами в URL</a></li>
+    <li><a href="index.html?id=1234">Ссылка с параметром id в URL</a></li>
+    <li><a href="index.html">Текущая</a></li>
+    <li><a href="about:blank">About</a></li>
+    <li><a href="../index1.html">Уровень выше</a></li>
+    <li><a href="../../index2.html">На 2 уровня выше</a></li>
+    <h1>
+        Иди в лучший универ КубГУ!!!<br>
+        Заходи прямо сейчас и не упусти свой шанс <a href="https://kubsu.ru">главная страница кубгу</a>
+    </h1>
+    <img src="https://www.meme-arsenal.com/memes/43618a00a59063ea788fa3c985d831dd.jpg" alt="Описание изображения" width="300" height="200" usemap="#image">
+    <map name="image">
+        <area shape="rect" coords="20,20,20,20" href="http://kubsu.ru/" alt="Область 1">
+        <area shape="circle" coords="20,20,20" href="http://kubsu.ru/" alt="Область 2">
+    </map> <br>
+    <li><a href="#">Ссылка с пустым href</a><br></li>
+    <li><a onclick="false">ссылка без href</a><br></li>
+    <li><a href="http://kubsu.ru/" rel="nofollow">запрещен переход поисковикам</a></li>
+    <li><a href="http://kubsu.ru/" rel="noindex">запрещен для индексации поисковиками</a></li>
+    <ol>
+        <li><a href="http://kubsu.ru/"title="Официальный сайт Кубанского государственного университета">КубГУ</a>;</li>
+        <li><a href="https://web.telegram.org/k/#-4006134311"title="телеграм">Телега</a>;</li>
+      </ol>
+
+    <li> <a href="two.html" target="_blank">ссылку на файл на сервере FTP с авторизацией</a></li>
+
+    <li> <a href="forma.html" target="_blank"> Форма </a></li>
+
+            </ul>
+            <img src="https://www.meme-arsenal.com/memes/43618a00a59063ea788fa3c985d831dd.jpg" alt="Описание изображения" class="img-fluid" id="foto">
+        </div>
+    </div>
+</div>
+</div>
+
+
+<!-- Калькулятор стоимости товара -->
+<div class="calculator">
+    <h2>Калькулятор стоимости заказа</h2>
+
+    <label for="product">Выберите товар:</label>
+    <select id="product">
+        <option value="0">Выберите товар</option>
+        <option value="500">Товар 1 - 500 руб</option>
+        <option value="1200">Товар 2 - 1200 руб</option>
+        <option value="2000">Товар 3 - 2000 руб</option>
+    </select>
+
+    <label for="quantity">Введите количество:</label>
+    <input type="text" id="quantity" placeholder="Введите количество">
+
+    <button id="calculateBtn">Рассчитать стоимость</button>
+
+    <div id="result"></div>
+</div>
+
+<!-- Калькулятор стоимости услуги -->
+<div class="calculator">
+    <h2>Калькулятор стоимости услуги</h2>
+
+    <label>Выберите тип услуги:</label>
+    <input type="radio" name="service-type" value="1" id="service1"> Услуга 1 (1000 руб)
+    <input type="radio" name="service-type" value="2" id="service2"> Услуга 2 (1500 руб)
+    <input type="radio" name="service-type" value="3" id="service3"> Услуга 3 (2000 руб)
+
+    <label for="service-quantity">Количество услуг:</label>
+    <input type="number" id="service-quantity" placeholder="Введите количество" min="1">
+
+    <!-- Блок с опциями для услуги 2 -->
+    <div id="service-options" class="service-options">
+        <label for="service-option">Выберите опцию:</label>
+        <select id="service-option">
+            <option value="0">Выберите опцию</option>
+            <option value="200">Опция 1 - +200 руб</option>
+            <option value="300">Опция 2 - +300 руб</option>
+        </select>
+    </div>
+
+    <!-- Блок с чекбоксом для услуги 3 -->
+    <div id="service-property" class="service-property">
+        <label for="property-checkbox">
+            <input type="checkbox" id="property-checkbox" value="500">
+            Включить свойство (+500 руб)
+        </label>
+    </div>
+
+    <button id="calculateServiceBtn">Рассчитать стоимость услуги</button>
+
+    <div id="service-result"></div>
+</div>
+
+<script>
+    // Калькулятор стоимости товара
+    const calculateBtn = document.getElementById('calculateBtn');
+    const productSelect = document.getElementById('product');
+    const quantityInput = document.getElementById('quantity');
+    const resultDiv = document.getElementById('result');
+
+    calculateBtn.addEventListener('click', () => {
+        const price = parseFloat(productSelect.value);
+        const quantity = quantityInput.value.trim();
+
+        if (!/^\d+$/.test(quantity)) {
+            resultDiv.textContent = 'Ошибка: Введите корректное количество товара (только числа).';
+            resultDiv.classList.add('error');
+        } else if (isNaN(price) || price === 0) {
+            resultDiv.textContent = 'Пожалуйста, выберите товар.';
+            resultDiv.classList.remove('error');
+        } else {
+            const totalCost = price * parseInt(quantity);
+            resultDiv.textContent = `Общая стоимость заказа: ${totalCost} руб.`;
+            resultDiv.classList.remove('error');
+        }
+    });
+
+    // Калькулятор стоимости услуги
+    const serviceOptions = document.getElementById('service-options');
+    const serviceProperty = document.getElementById('service-property');
+    const serviceQuantityInput = document.getElementById('service-quantity');
+    const calculateServiceBtn = document.getElementById('calculateServiceBtn');
+    const serviceResultDiv = document.getElementById('service-result');
+
+    // Функция обновления опций и свойств в зависимости от выбранной услуги
+    function updateServiceOptions() {
+        const selectedService = document.querySelector('input[name="service-type"]:checked');
+
+        if (selectedService) {
+            const serviceType = selectedService.value;
+            
+            // Настройки для типа услуги
+            if (serviceType === "1") {
+                serviceOptions.style.display = 'none';  // Услуга 1 не имеет дополнительных опций
+                serviceProperty.style.display = 'none'; // И не имеет свойств
+            } else if (serviceType === "2") {
+                serviceOptions.style.display = 'block'; // Услуга 2 имеет только опции
+                serviceProperty.style.display = 'none'; // Но не имеет свойств
+            } else if (serviceType === "3") {
+                serviceOptions.style.display = 'none';  // Услуга 3 не имеет опций
+                serviceProperty.style.display = 'block'; // Но имеет свойства
+            }
+        }
+    }
+
+    // Обработчик события для радиокнопок
+    document.querySelectorAll('input[name="service-type"]').forEach(radio => {
+        radio.addEventListener('change', updateServiceOptions);
+    });
+
+    // Расчет стоимости услуги
+    calculateServiceBtn.addEventListener('click', () => {
+        const selectedService = document.querySelector('input[name="service-type"]:checked');
+        const quantity = parseInt(serviceQuantityInput.value);
+        let serviceCost = 0;
+
+        if (!selectedService || isNaN(quantity) || quantity < 1) {
+            serviceResultDiv.textContent = 'Ошибка: выберите услугу и введите корректное количество.';
+            serviceResultDiv.classList.add('error');
+            return;
+        }
+
+        // Получаем базовую стоимость услуги
+        switch (selectedService.value) {
+            case "1":
+                serviceCost = 1000;
+                break;
+            case "2":
+                serviceCost = 1500;
+                const selectedOptionValue = parseFloat(document.getElementById('service-option').value);
+                if (!isNaN(selectedOptionValue)) {
+                    serviceCost += selectedOptionValue;  // Добавляем стоимость опции, если выбрана
+                }
+                break;
+            case "3":
+                serviceCost = 2000;
+                const isChecked = document.getElementById('property-checkbox').checked;
+                if (isChecked) {
+                    serviceCost += 500;  // Добавляем стоимость свойства, если оно выбрано
+                }
+                break;
+        }
+
+        const totalCost = serviceCost * quantity;
+        serviceResultDiv.textContent = `Общая стоимость услуги: ${totalCost} руб.`;
+        serviceResultDiv.classList.remove('error');
+    });
+</script>
+
+<footer class="bg-light text-center mt-4 py-3">
+    <div class="container">
+        <a href="index.html">© Lioznov Andrey Alekseevich</a>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+
+</body>
+</html>

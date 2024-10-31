@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Форма</title>
+</head>
+<body>
+<h1 id="fragment">Форма: </h1>
+
+  <h4>
+  <form method="POST">
+
+    <label>
+      ФИО:<br> <input name="field-full-name" value="">
+    </label><br>
+
+    <label>
+      Номер телефона:<br> <input name="field-phone" value="" type="tel">
+    </label><br>
+
+    <label>
+      Email:<br> <input name="field-email"value="" type="email">
+    </label><br>
+
+    <label>
+      Дата рождения:<br> <input name="field-date" value="" type="date">
+    </label><br>
+
+    <label>
+      Пол:<br> 
+      <input type="radio" name="field-gender" value="Мужской">
+      Мужской
+    </label><br>
+
+    <label>
+      <input type="radio" name="field-gender" value="Женский">
+      Женский
+    </label><br>
+
+    <label>
+      Любимый язык программирования:
+      <br>
+      <select name="field-programming-leng" multiple="multiple" size="10">
+          <option value="Pascal">Pascal</option>
+          <option value="C">C</option>
+          <option value="C++">C++</option>
+          <option value="JavaScript">JavaScript</option>
+          <option value="PHP">PHP</option>
+          <option value="Python">Python</option>
+          <option value="Java">Java</option>
+          <option value="Haskel">Haskel</option>
+          <option value="Clojure">Clojure</option>
+          <option value="Prolog">Prolog</option>
+          <option value="Scala">Scala</option>
+      </select>
+    </label><br>
+
+    <label>
+        Биография:<br> <textarea name="field-bio"></textarea>
+    </label><br>
+
+    <label>
+      С контрактом ознакомлен(a)
+      <input type="checkbox" name="check">
+    </label><br>
+
+   <input type="submit" value="Сохранить">
+    
+  </form>
+  </h4>
+</body>
+</html>

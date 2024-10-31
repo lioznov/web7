@@ -1,0 +1,67 @@
+/* Основные стили меню (по умолчанию горизонтальные для компьютеров) */
+.menu {
+    list-style-type: none;  /* Убираем маркеры списка */
+    padding: 0;
+    margin: 0;
+    display: flex;  /* Горизонтальное выравнивание */
+    justify-content: space-around;  /* Равномерное распределение элементов */
+    background-color: #333;  /* Цвет фона меню */
+}
+
+.menu li {
+    margin: 0;
+}
+
+.menu li a {
+    display: block;
+    padding: 15px 20px;  /* Отступы внутри пунктов меню */
+    color: white;  /* Цвет текста */
+    text-decoration: none;  /* Убираем подчеркивание */
+}
+
+.menu li a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Скрываем кнопку меню на больших экранах */
+.menu-toggle {
+    display: none;
+}
+
+/* Медиазапрос для мобильных устройств (максимум 600px) */
+@media (max-width: 600px) {
+    /* Показываем кнопку на мобильных экранах */
+    .menu-toggle {
+        display: block;
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        border: none;
+        cursor: pointer;
+        width: 100%;  /* Кнопка занимает всю ширину */
+    }
+
+    /* Делаем меню вертикальным и скрываем его по умолчанию */
+    .menu {
+        display: none;
+        flex-direction: column;  /* Вертикальное меню */
+        width: 100%;  /* Меню занимает всю ширину */
+        background-color: #333;
+    }
+
+    /* Показываем меню при добавлении класса "show" */
+    .menu.show {
+        display: flex;
+    }
+
+    .menu li {
+        margin-bottom: 5px;  /* Отступы между пунктами меню */
+    }
+
+    .menu li a {
+        padding: 15px;  /* Увеличенные отступы внутри пунктов меню */
+        font-size: 18px;  /* Увеличенный размер шрифта */
+    }
+}

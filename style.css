@@ -1,0 +1,254 @@
+.navbar {
+    width: 100%;
+    height: 70px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
+}
+
+.container {
+    list-style: none;
+    margin: 0;
+    padding: 20px;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .nechet{
+    color: #ff0000;
+}
+.ch {
+    background: #ff0000;
+   }
+
+.navbar-menu {
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row; /* Горизонтальное меню по умолчанию */
+    width: 400px; /* Ширина меню */
+}
+
+.navbar-menu li {
+    margin-bottom: 10px; /* Отступ между элементами */
+}
+
+.navbar-menu li a {
+    display: block; /* Элементы занимают всю ширину */
+    padding: 10px;
+    background-color: #f4f4f4; /* Цвет фона */
+    color: #333; /* Цвет текста */
+    text-decoration: none; /* Убираем подчеркивание */
+    border: 1px solid #ddd; /* Обводка элементов меню */
+}
+
+.navbar-menu li a:hover {
+    background-color: #ddd; /* Цвет фона при наведении */
+    color: #000; /* Цвет текста при наведении */
+}
+
+.navbar-wrap {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 26px;
+    text-decoration: none;
+    color: #000;
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+
+    .tabfor
+    {
+    display: flex;
+    flex-flow: wrap;
+    }
+    .forma{
+    order: 1;
+    }
+
+    .tab{
+    order: 2;
+    }
+
+
+    
+    .navbar {
+        height: auto;
+        padding: 10px;
+    }
+
+    .navbar .container {
+        flex-direction: column; /* Вертикальная компоновка контейнера */
+    }
+
+    .navbar-menu {
+        flex-direction: column; /* Вертикальное меню */
+        width: 100%; /* Меню занимает всю ширину */
+    }
+
+    .navbar-menu li {
+        margin-bottom: 5px;
+        display: block; /* Вертикальное расположение пунктов меню */
+    }
+
+    .navbar-menu li a {
+        padding: 15px;
+        width: 100%; /* Занимает всю ширину экрана */
+    }
+
+    .navbar-brand {
+        margin-bottom: 10px;
+        font-size: 22px;
+    }
+}
+
+
+
+
+
+
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  background-color: #f3f3f3;
+}
+
+.gallery-wrapper {
+  width: 80%;
+  max-width: 600px;
+}
+
+.gallery-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-slider {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+}
+
+.slide {
+  min-width: 33.33%;
+  padding: 10px; /* Отступы вокруг изображений */
+}
+
+.slide img {
+  width: 100%;
+  display: block;
+}
+
+.arrow {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.left-arrow {
+  left: -40px;
+}
+
+.right-arrow {
+  right: -40px;
+}
+
+.pager {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .slide {
+    min-width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .calculator {
+            max-width: 300px;
+            margin: auto;
+        }
+        label, select, input, button {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        #result {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+
+/*.tabfor
+{
+	display: flex;
+	flex-flow: wrap;
+}
+.forma{
+	order: 1;
+}
+
+.tab{
+order: 2;
+}
+*/
+
+/*    .nechet{
+    color: #ff0000;
+}
+.ch {
+    background: #ff0000;
+   }*/
+
+
+
